@@ -1,5 +1,5 @@
 {
-    "name" : "roctbb/laravel-fcm",
+    "name" : "kawankoding/laravel-fcm",
     "description" : "A package to send Firebase notification cross Laravel Application",
     "authors": [
         {
@@ -13,7 +13,7 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Roctbb\\Fcm\\" : "src/"
+            "Kawankoding\\Fcm\\" : "src/"
         },
         "files" : [
             "src/helpers.php"
@@ -22,10 +22,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Roctbb\\Fcm\\FcmServiceProvider"
+                "Kawankoding\\Fcm\\FcmServiceProvider"
             ],
             "aliases" : {
-                "Fcm": "Roctbb\\Fcm\\FcmFacade"
+                "Fcm": "Kawankoding\\Fcm\\FcmFacade"
             }
         }
     }

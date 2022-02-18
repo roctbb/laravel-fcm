@@ -1,10 +1,10 @@
 <?php
 
-namespace Roctbb\Fcm;
+namespace Kawankoding\Fcm;
 
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
-use Roctbb\Fcm\Fcm;
+use Kawankoding\Fcm\Fcm;
 use Laravel\Lumen\Application as LumenApplication;
 
 /**
