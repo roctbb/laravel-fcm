@@ -87,7 +87,12 @@ class Fcm
             'content_available' => true,
             'priority' => isset($this->priority) ? $this->priority : 'high',
             'data' => $this->data,
-            'notification' => $this->notification
+            'notification' => $this->notification,
+            "android" => [
+                "notification" => [
+                    "click_action" => "FCM_PLUGIN_ACTIVITY"
+                ]
+            ]
         ];
         
         if(!empty($this->package))
