@@ -1,5 +1,5 @@
 {
-    "name" : "kawankoding/laravel-fcm",
+    "name" : "roctbb/laravel-fcm",
     "description" : "A package to send Firebase notification cross Laravel Application",
     "authors": [
         {
