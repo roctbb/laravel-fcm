@@ -1,6 +1,6 @@
 <?php
 
-namespace Kawankoding\Fcm;
+namespace Roctbb\Fcm;
 
 /**
  * Class Fcm
