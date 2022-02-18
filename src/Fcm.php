@@ -73,11 +73,11 @@ class Fcm
 
         return $this;
     }
-
+    
     public function setPackage($package)
     {
         $this->package = $package;
-
+        
         return $this;
     }
 
@@ -87,15 +87,11 @@ class Fcm
             'content_available' => true,
             'priority' => isset($this->priority) ? $this->priority : 'high',
             'data' => $this->data,
-            'notification' => $this->notification,
-            "android" => [
-                "notification" => [
-                    "click_action" => "FCM_PLUGIN_ACTIVITY"
-                ]
-            ]
+            'notification' => $this->notification
         ];
-
-        if (!empty($this->package)) {
+        
+        if(!empty($this->package))
+        {
             $payloads['restricted_package_name'] = $this->package;
         }
 
@@ -106,7 +102,7 @@ class Fcm
         }
 
         if ($this->timeToLive !== null && $this->timeToLive >= 0) {
-            $payloads['time_to_live'] = (int)$this->timeToLive;
+            $payloads['time_to_live'] = (int) $this->timeToLive;
         }
 
         $headers = [
