@@ -13,7 +13,7 @@
     },
     "autoload" : {
         "psr-4" : {
-            "Kawankoding\\Fcm\\" : "src/"
+            "Roctbb\\Fcm\\" : "src/"
         },
         "files" : [
             "src/helpers.php"
@@ -22,10 +22,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kawankoding\\Fcm\\FcmServiceProvider"
+                "Roctbb\\Fcm\\FcmServiceProvider"
             ],
             "aliases" : {
-                "Fcm": "Kawankoding\\Fcm\\FcmFacade"
+                "Fcm": "Roctbb\\Fcm\\FcmFacade"
             }
         }
     }
