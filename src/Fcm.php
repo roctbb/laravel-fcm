@@ -40,10 +40,12 @@ class Fcm
 
     public function apns($apns) {
         $this->apns = $apns;
+        return $this;
     }
 
     public function android($android) {
         $this->android = $android;
+        return $this;
     }
 
     public function toTopic($topic)
