@@ -17,6 +17,8 @@ class Fcm
     protected $timeToLive;
     protected $priority;
     protected $package;
+    protected $apns;
+    protected $android;
 
     protected $serverKey;
 
@@ -25,6 +27,8 @@ class Fcm
     public function __construct($serverKey)
     {
         $this->serverKey = $serverKey;
+        $this->apns = null;
+        $this->android = null;
     }
 
     public function to($recipients)
@@ -32,6 +36,14 @@ class Fcm
         $this->recipients = $recipients;
 
         return $this;
+    }
+
+    public function apns($apns) {
+        $this->apns = $apns;
+    }
+
+    public function android($android) {
+        $this->android = $android;
     }
 
     public function toTopic($topic)
@@ -98,12 +110,15 @@ class Fcm
             'priority' => isset($this->priority) ? $this->priority : 'high',
             'data' => $this->data,
             'notification' => $this->notification,
-            "android" => [
-                "notification" => [
-                    "click_action" => "FCM_PLUGIN_ACTIVITY"
-                ]
-            ]
         ];
+
+        if ($this->android) {
+            $payloads['android'] = $this->android; 
+        }
+
+        if ($this->apns) {
+            $payloads['apns'] = $this->apns; 
+        }
         
         if(!empty($this->package))
         {
