@@ -19,6 +19,7 @@ class Fcm
     protected $package;
     protected $apns;
     protected $android;
+    protected $payload;
 
     protected $serverKey;
 
@@ -97,6 +98,10 @@ class Fcm
         return $this;
     }
 
+    public function getSentPayload() {
+        return $this->payload;
+    }
+
     public function enableResponseLog($enable = true)
     {
         $this->responseLogEnabled = $enable;
@@ -142,6 +147,8 @@ class Fcm
             'Content-Type: application/json',
         ];
 
+        $this->payload = $payloads;
+
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, self::ENDPOINT);
         curl_setopt($ch, CURLOPT_POST, true);
@@ -160,4 +167,6 @@ class Fcm
 
         return $result;
     }
+
+    
 }
