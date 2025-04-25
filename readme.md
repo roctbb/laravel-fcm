@@ -81,6 +81,26 @@ APP_NAME="Laravel"
 FCM_SERVER_KEY=putYourKeyHere
 ```
 
+
+### Methods Ref
+
+- `->to()`
+
+- `->toTopic()`
+
+- `->data()`
+
+- `->notification()`
+
+- `->priority()`
+
+- `->timeToLive()`
+
+- `->enableResponseLog()`
+
+- `->send()`
+
+
 ### Usage
 
 If You want to send a FCM with just notification parameter, this is an example of usage sending a FCM with only data parameter :
@@ -101,6 +121,9 @@ fcm()
     ])
     ->send();
 ```
+
+**NOTE**: By default, Firebase server will queue your notification in 4 weeks. You could change this behavior by setting `->timeToLive(value_in_seconds)`. For example snippet above "->timeToLive(0)" will skip the queue, the target device (eg. android) must be online when the notification arive, otherwhise the target device will not receive the notification.
+
 
 If You want to send a FCM to topic, use method toTopic(\$topic) instead to() :
 
